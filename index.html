@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভয়েস, অনুবাদ ও ফাইল টুল</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="container">
+        <h2>ভয়েস, অনুবাদ ও ফাইল টুল</h2>
+        <p class="subtitle">এখানে লিখুন, ফাইল অপশন থেকে লোড করুন অথবা ড্রাইভের টেক্সট দিন...</p>
+
+        <!-- Text Input Area -->
+        <textarea id="textInput" placeholder="এখানে আপনার টেক্সট টাইপ বা পেস্ট করুন..."></textarea>
+
+        <!-- Language Selector & Swap -->
+        <div class="lang-container">
+            <select id="sourceLang">
+                <option value="bn-BD" selected>বাংলা (Bengali)</option>
+                <option value="en-US">English</option>
+                <option value="hi-IN">हिन्दी (Hindi)</option>
+                <option value="ar-SA">العربية (Arabic)</option>
+                <option value="es-ES">Español (Spanish)</option>
+                <option value="fr-FR">Français (French)</option>
+            </select>
+            
+            <button id="swapLangBtn" title="ভাষা পরিবর্তন করুন">🔄</button>
+            
+            <select id="targetLang">
+                <option value="en-US" selected>English</option>
+                <option value="bn-BD">বাংলা (Bengali)</option>
+                <option value="hi-IN">हिन्दी (Hindi)</option>
+                <option value="ar-SA">العربية (Arabic)</option>
+                <option value="es-ES">Español (Spanish)</option>
+                <option value="fr-FR">Français (French)</option>
+            </select>
+        </div>
+
+        <!-- Voice Speed Control -->
+        <div class="speed-container">
+            <label for="speedSlider">ভয়েস স্পিড <span id="speedVal">(1.0)</span></label>
+            <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.1" value="1.0">
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="btn-grid">
+            <button id="readBtn" class="btn-read">▶ পড়ে শোনাও</button>
+            <button id="pauseBtn" class="btn-pause">⏸ বিরতি</button>
+            <button id="resumeBtn" class="btn-resume">▶ চালু করুন</button>
+            <button id="stopBtn" class="btn-stop">⏹ থামাও</button>
+            
+            <button id="translateBtn" class="btn-translate">🌐 অনুবাদ করুন</button>
+            <button id="fileInputBtn" class="btn-file">📁 ফাইল খুলুন</button>
+            <input type="file" id="fileUpload" accept=".txt,.html,.js,.css" style="display: none;">
+            
+            <button id="driveBtn" class="btn-drive">☁ ড্রাইভ/ওয়েব</button>
+        </div>
+
+        <!-- Copy and Save History Button -->
+        <button id="copySaveBtn" class="btn-copy">📋 কপি ও সেভ হিস্ট্রি</button>
+
+        <!-- Saved History Section -->
+        <div class="history-section">
+            <div class="history-header">
+                <h3>সংরক্ষিত মেসেজ (Saved History)</h3>
+                <button id="clearAllBtn" class="btn-clear">সব মুছুন</button>
+            </div>
+            <div id="historyContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

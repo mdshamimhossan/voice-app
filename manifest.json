@@ -1,0 +1,12 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Voice",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Translation and file Tools",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "description": "Voice App for translation and file management"
+}
