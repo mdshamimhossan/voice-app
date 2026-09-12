@@ -17,23 +17,23 @@ body {
 
 .container {
     background: #ffffff;
-    width: 100%;
-    max-width: 550px;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
 }
 
 h2 {
     font-size: 22px;
-    color: #2c3e50;
-    margin-bottom: 5px;
+    color: #1e293b;
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    font-size: 13px;
-    color: #7f8c8d;
-    margin-bottom: 15px;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 20px;
 }
 
 textarea {
@@ -42,139 +42,82 @@ textarea {
     padding: 12px;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 15px;
     resize: vertical;
-    outline: none;
-    transition: border-color 0.2s;
     margin-bottom: 15px;
+    outline: none;
 }
 
 textarea:focus {
     border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
-.lang-container {
+/* বাটনগুলোর ডিজাইন */
+.action-buttons {
     display: flex;
     gap: 10px;
-    align-items: center;
     margin-bottom: 15px;
 }
 
-select {
+.btn {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    background: #fff;
-    font-size: 14px;
-    outline: none;
-}
-
-#swapLangBtn {
-    background: #e2e8f0;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s;
-}
-
-#swapLangBtn:hover {
-    background: #cbd5e1;
-}
-
-.speed-container {
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #475569;
-}
-
-.speed-container label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="range"] {
-    width: 100%;
-    accent-color: #3b82f6;
-}
-
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-button {
-    padding: 11px 10px;
+    padding: 10px 12px;
     border: none;
     border-radius: 6px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    color: #ffffff;
-    transition: opacity 0.2s, transform 0.1s;
+    transition: background 0.2s;
 }
 
-button:active {
-    transform: scale(0.98);
+.primary-btn {
+    background-color: #3b82f6;
+    color: white;
+}
+.primary-btn:hover { background-color: #2563eb; }
+
+.success-btn {
+    background-color: #10b981;
+    color: white;
+}
+.success-btn:hover { background-color: #059669; }
+
+.info-btn {
+    background-color: #8b5cf6;
+    color: white;
+}
+.info-btn:hover { background-color: #7c3aed; }
+
+.lang-container {
+    margin-bottom: 15px;
 }
 
-.btn-read { background-color: #2563eb; }
-.btn-pause { background-color: #d97706; }
-.btn-resume { background-color: #059669; }
-.btn-stop { background-color: #dc2626; }
-.btn-translate { background-color: #0d9488; }
-.btn-file { background-color: #7c3aed; }
-.btn-drive { background-color: #0284c7; }
-
-.btn-copy {
+select {
     width: 100%;
-    background-color: #1e293b;
-    margin-bottom: 20px;
-    padding: 12px;
-}
-
-.history-section {
-    border-top: 1px solid #e2e8f0;
-    padding-top: 15px;
-}
-
-.history-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.history-header h3 {
-    font-size: 15px;
-    color: #334155;
-}
-
-.btn-clear {
-    background-color: #ef4444;
-    padding: 5px 10px;
-    font-size: 12px;
-}
-
-#historyContainer {
-    max-height: 150px;
-    overflow-y: auto;
-}
-
-.history-item {
-    background: #f8fafc;
-    padding: 8px 10px;
-    margin-bottom: 6px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
     border-radius: 6px;
-    border-left: 3px solid #3b82f6;
-    font-size: 13px;
+    font-size: 14px;
+    background-color: #fff;
     cursor: pointer;
-    word-break: break-all;
 }
-.history-item:hover {
-    background: #f1f5f9;
+
+.output-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.output-section h3 {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 5px;
+}
+
+#outputText {
+    font-size: 14px;
+    color: #334155;
 }

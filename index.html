@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ভয়েস, অনুবাদ ও ফাইল টুল</title>
+    <title>ভয়েস, অনুবাদ ও ফাইল টুল</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    
-    <!-- সার্ভিস ওয়ার্কার রেজিস্টার করার কোড -->
+
+    <!-- সার্ভিস ওয়ার্কার রেজিস্টার করার কোড -->
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/voice-app/sw.js')
-            .then((registration) => {
-              console.log('ServiceWorker registered successfully.');
-            })
-            .catch((err) => {
-              console.log('ServiceWorker registration failed: ', err);
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/voice-app/sw.js')
+                    .then((registration) => {
+                        console.log('ServiceWorker registered successfully.');
+                    })
+                    .catch((err) => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
             });
-        });
-      }
+        }
     </script>
 </head>
 <body>
-
     <div class="container">
-        <h2>ভয়েস, অনুবাদ ও ফাইল টুল</h2>
-        <p class="subtitle">এখানে লিখুন, ফাইল অপশন থেকে লোড করুন অথবা ড্রাইভের টেক্সট দিন...</p>
+        <h2>ভয়েস, অনুবাদ ও ফাইল টুল</h2>
+        <p class="subtitle">এখানে লিখুন, ফাইল অপশন থেকে লোড করুন অথবা ভয়েসের টেক্সট দিন...</p>
 
         <!-- Text Input Area -->
         <textarea id="textInput" placeholder="এখানে আপনার টেক্সট টাইপ করুন..."></textarea>
+
+        <!-- Action Buttons Section (নতুন ও প্রফেশনাল বাটনগুলো) -->
+        <div class="action-buttons">
+            <button id="voiceBtn" class="btn primary-btn">🎤 ভয়েস রেকর্ড</button>
+            <button id="translateBtn" class="btn success-btn">🌐 অনুবাদ করুন</button>
+            <button id="fileBtn" class="btn info-btn">📁 ফাইল আপলোড</button>
+        </div>
 
         <!-- Language Selector & Swap -->
         <div class="lang-container">
@@ -42,7 +48,12 @@
                 <option value="fr-FR">Français (French)</option>
             </select>
         </div>
-    </div>
 
+        <!-- Output Result Section -->
+        <div id="outputSection" class="output-section">
+            <h3>ফলাফল:</h3>
+            <p id="outputText">আপনার ফলাফল এখানে প্রদর্শিত হবে...</p>
+        </div>
+    </div>
 </body>
 </html>
