@@ -1,4 +1,4 @@
-const CACHE_NAME = 'voice-app-v1';
+const CACHE_NAME = 'voice-app-v2';
 const urlsToCache = [
   '/voice-app/',
   '/voice-app/index.html',
@@ -7,7 +7,6 @@ const urlsToCache = [
   '/voice-app/icon.png'
 ];
 
-// ইনস্টল করার সময় ফাইলগুলো ক্যাশ করে রাখা
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -17,7 +16,6 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// ইন্টারনেট থেকে নতুন ডেটা ফেচ করা বা ক্যাশ থেকে দেখানো
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
