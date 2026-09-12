@@ -4,9 +4,9 @@
   "display": "standalone",
   "name": "Voice",
   "orientation": "any",
-  "scope": "/",
+  "scope": "/voice-app/",
   "short_name": "Translation and file Tools",
-  "start_url": "/",
+  "start_url": "/voice-app/",
   "theme_color": "#ffffff",
   "description": "Voice App for translation and file management",
   "icons": [
